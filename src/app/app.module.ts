@@ -8,6 +8,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Error404Component } from './error404/error404.component';
 import { NavTabComponent } from './nav-tab/nav-tab.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NavTabComponent } from './nav-tab/nav-tab.component';
     BlogComponent,
     FormularioComponent,
     Error404Component,
-    NavTabComponent
+    NavTabComponent,
+    HeaderComponent
   ],
 
   //ReactiveFormsModule para formulario model

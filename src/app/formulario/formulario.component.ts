@@ -29,7 +29,7 @@ export class FormularioComponent implements OnInit {
   async onSubmit() {
     console.log(this.formulario.value);
     const response = await this.blogService.agregarPost(this.formulario.value);
-    //this.formulario.reset();
+    this.formulario.reset();
   }
 
 }

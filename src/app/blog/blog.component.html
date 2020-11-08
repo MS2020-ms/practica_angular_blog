@@ -13,13 +13,14 @@
     </select>
 
 
-    <div class="post" *ngFor="let post of arrPostsRecibidos">
+    <div class="post" *ngFor="let post of arrPostsRecibidos, let indice = index;">
         <h4>{{post.titulo}}</h4>
         <img [src]="post.imagen">
         <p>{{post.texto}}</p>
         <p>autor: {{post.autor}}</p>
         <p>{{post.fecha | date:'mediumDate' }}</p>
         <p>{{post.categoria | titlecase}}</p>
+        <button class="btn btn-sm btn-danger" (click)="onClickBorrar(indice)">Eliminar Post</button>
     </div>
 
 </div>

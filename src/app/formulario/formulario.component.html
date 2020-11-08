@@ -1,9 +1,9 @@
 <p>formulario works!</p>
 
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label>Titulo del Post:</label>
-        <input type="text" class="form-control" formControlName="titulo">
+        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" formControlName="titulo">
         <p class="text-danger"
             *ngIf="formulario.get('titulo').hasError('required') && formulario.get('titulo').touched">
             * El campo titulo es requerido</p>

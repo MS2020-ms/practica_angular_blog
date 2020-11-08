@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Post } from '../interfaces/post.interface';
+import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-formulario',
@@ -9,31 +9,27 @@ import { Post } from '../interfaces/post.interface';
 })
 export class FormularioComponent implements OnInit {
 
-  @Output() nuevoPost: EventEmitter<Post>;
-
   formulario: FormGroup;
 
-  constructor() {
-
-    this.nuevoPost = new EventEmitter();
+  constructor(private blogService: BlogService) {
 
     this.formulario = new FormGroup({
-      nombre: new FormControl('', [Validators.required]),
-      apellidos: new FormControl(),
-      departamento: new FormControl(),
-      cargo: new FormControl(),
-      experiencia: new FormControl(),
+      titulo: new FormControl('', [Validators.required]),
+      texto: new FormControl('', [Validators.required]),
+      autor: new FormControl('', [Validators.required]),
       imagen: new FormControl(),
+      fecha: new FormControl('', [Validators.required]),
+      categoria: new FormControl('', [Validators.required]),
     });
   }
 
   ngOnInit(): void {
   }
 
-  onSubmit() {
+  async onSubmit() {
     console.log(this.formulario.value);
-    this.nuevoPost.emit(this.formulario.value);
-    this.formulario.reset();
+    const response = await this.blogService.agregarPost(this.formulario.value);
+    //this.formulario.reset();
   }
 
 }

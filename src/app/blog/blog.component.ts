@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../interfaces/post.interface';
+import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  arrPostsRecibidos: Post[];
+
+  constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
+
+    this.blogService.getAllPosts()
+      .then(posts => {
+        this.arrPostsRecibidos = posts;
+      })
+      .catch(error => console.log(error));
+  }
+
+  async onChange($event) {
+    if ($event.target.value === 'todos') {
+      this.arrPostsRecibidos = await this.blogService.getAllPosts();
+    } else {
+      this.arrPostsRecibidos = await this.blogService.getPostsByCategoria($event.target.value);
+    }
   }
 
 }

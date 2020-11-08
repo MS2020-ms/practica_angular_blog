@@ -1,1 +1,25 @@
 <p>blog works!</p>
+<div class="posts">
+
+    <label>Selecciona un categoria: </label>
+    <select (change)="onChange($event)">
+        <option value="todos">Todos</option>
+        <option value="estilo">Estilo</option>
+        <option value="comida">Comida</option>
+        <option value="viaje">Viaje</option>
+        <option value="cultura">Cultura</option>
+        <option value="ocio">Ocio</option>
+        <!-- <option [value]="pais" *ngFor="let pais of paises">{{ pais | titlecase }}</option> -->
+    </select>
+
+
+    <div class="post" *ngFor="let post of arrPostsRecibidos">
+        <h4>{{post.titulo}}</h4>
+        <img [src]="post.imagen">
+        <p>{{post.texto}}</p>
+        <p>autor: {{post.autor}}</p>
+        <p>{{post.fecha | date:'mediumDate' }}</p>
+        <p>{{post.categoria | titlecase}}</p>
+    </div>
+
+</div>

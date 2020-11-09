@@ -14,14 +14,14 @@ export class BlogService {
       {
         titulo: 'De Cafes por Berlin',
         texto: 'Berlín tiene infinidad de cafeterías para todos los gustos. Cada una de ellas se puede decir que tiene una personalidad diferente, con una temática, decoración y ambiente muy especiales, tanto que algunas, a veces, pueden rozar lo ‘raro’.',
-        autor: 'Mario Müller',
+        autor: 'Hanna Müller',
         imagen: './assets/images/cafe-berlin.jpg',
         fecha: new Date(),
         categoria: 'viaje'
       },
       {
-        titulo: 'EMOP del 1—31 OCT 2020',
-        texto: 'European Month of Photography Berlin (EMOP). Es el mayor festival de fotografía en Alemania. Desde 2004, se lleva a cabo cada dos años en Berlín, presentando una amplia gama de exposiciones y eventos sobre fotografía histórica y contemporánea.',
+        titulo: 'European Month of Photography',
+        texto: 'EMOP se celebra su edicion en Berlin del 1 al 31 de octubre de 2020. Es el mayor festival de fotografía en Alemania. Desde 2004, se lleva a cabo cada dos años en Berlín, presentando una amplia gama de exposiciones y eventos sobre fotografía histórica y contemporánea.',
         autor: 'Martirio Galan',
         imagen: './assets/images/camara-fotos.jpg',
         fecha: new Date(),

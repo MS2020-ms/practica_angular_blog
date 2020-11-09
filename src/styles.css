@@ -1,4 +1,11 @@
 
+@import '~font-awesome/css/font-awesome.css';
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -34,6 +41,12 @@
 .botones{
     border-top: 1.5px solid #8a8a8a;
 }
+.botones div:last-child {
+    margin-top: 20px;
+}
+.botones div:last-child a{
+    color: black;
+}
 .botones button{
     margin-top: 15px;
     margin-right: 10px;
@@ -43,6 +56,10 @@
 }
 .blog-posts{
     margin-top: 15px;
+}
+.blog-posts .arrow-top{
+    color: #8a8a8a;
+    font-size: 2em;
 }
 .blog-post{
     /* display: flex;
@@ -54,7 +71,6 @@
 }
 .blog-post img{
     width: 100%;
-    margin-bottom: 25px;
 }
 .blog-post button{
     margin-bottom: 20px;
@@ -64,5 +80,21 @@
     background-color: lightgrey;
     padding-bottom: 5px;
 }
-
+.blog-post h4{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 1.75em;
+    margin-top: 10px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    background-color: #202020;
+    margin-top: 8px;
+}
+.footer i{
+    margin-top: 30px;
+    color: white;
+}
 

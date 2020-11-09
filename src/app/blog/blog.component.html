@@ -16,7 +16,7 @@
     <div class="blog-post card col-8" *ngFor="let post of arrPostsRecibidos, let indice=index;">
 
         <img class="card-img-top" [src]="post.imagen">
-        <h5 class="text-center">{{post.categoria | titlecase}}</h5>
+        <h5 class="text-center" [ngClass]="post.categoria">{{post.categoria | titlecase}}</h5>
         <h4 class="title text-center">{{post.titulo}}</h4>
         <p class="text">{{post.texto}}</p>
         <p class="text">autor: {{post.autor}}</p>

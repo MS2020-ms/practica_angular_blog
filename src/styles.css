@@ -59,7 +59,23 @@ html {
 }
 .blog-posts .arrow-top{
     color: #8a8a8a;
-    font-size: 2em;
+    font-size: 1.70em;
+    margin-bottom: 5px;
+}
+.blog-posts .viaje{
+    background-color: #ffbb33;
+}
+.blog-posts .cultura{
+    background-color: #8a8a8a;
+}
+.blog-posts .ocio{
+    background-color: #38ada9;
+}
+.blog-posts .estilo{
+    background-color: #05c46b;
+}
+.blog-posts .gastro{
+    background-color: #d2dae2;
 }
 .blog-post{
     /* display: flex;

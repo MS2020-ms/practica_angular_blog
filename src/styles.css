@@ -1,3 +1,4 @@
+
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -20,7 +21,7 @@
 .header .head div{
     height: 40px;
     width: 40px;
-    background-color: #f6f207;
+    background-color: #ffbb33;
     border-radius: 50%;
     margin-top: 25px;
     margin-left: 10px;
@@ -31,10 +32,37 @@
     margin-bottom: 10px;
 }
 .botones{
-    border-top: 1px solid #8a8a8a;
+    border-top: 1.5px solid #8a8a8a;
 }
 .botones button{
     margin-top: 15px;
     margin-right: 10px;
 }
+.botones button:hover{
+    color: black;
+}
+.blog-posts{
+    margin-top: 15px;
+}
+.blog-post{
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+    border-style: none;
+    margin-top: 30px;
+    border-bottom: 1px solid #8a8a8a;
+}
+.blog-post img{
+    width: 100%;
+    margin-bottom: 25px;
+}
+.blog-post button{
+    margin-bottom: 20px;
+    margin-left: 50%;
+}
+.blog-post h5{
+    background-color: lightgrey;
+    padding-bottom: 5px;
+}
+
 

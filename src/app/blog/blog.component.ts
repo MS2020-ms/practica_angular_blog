@@ -23,7 +23,7 @@ export class BlogComponent implements OnInit {
   }
 
   async onChange($event) {
-    if ($event.target.value === 'todos') {
+    if ($event.target.value === 'todas') {
       this.arrPostsRecibidos = await this.blogService.getAllPosts();
     } else {
       this.arrPostsRecibidos = await this.blogService.getPostsByCategoria($event.target.value);

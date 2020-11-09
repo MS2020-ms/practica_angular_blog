@@ -1,7 +1,7 @@
 
 /*  export enum Categoria {
   estilo,
-  comida,
+  gastro,
   viaje,
   cultura,
   ocio

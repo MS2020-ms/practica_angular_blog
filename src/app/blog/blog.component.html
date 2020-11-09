@@ -1,11 +1,10 @@
-<p>blog works!</p>
-<div class="posts">
+<div class="blog-posts">
 
-    <label>Selecciona un categoria: </label>
-    <select (change)="onChange($event)">
-        <option value="todos">Todos</option>
+    <select class="browser-default custom-select w-50" (change)="onChange($event)">
+        <option disabled selected>Selecciona un categoria</option>
+        <option value="todas">Todas</option>
         <option value="estilo">Estilo</option>
-        <option value="comida">Comida</option>
+        <option value="gastro">Gastro</option>
         <option value="viaje">Viaje</option>
         <option value="cultura">Cultura</option>
         <option value="ocio">Ocio</option>
@@ -13,14 +12,16 @@
     </select>
 
 
-    <div class="post" *ngFor="let post of arrPostsRecibidos, let indice = index;">
-        <h4>{{post.titulo}}</h4>
-        <img [src]="post.imagen">
-        <p>{{post.texto}}</p>
-        <p>autor: {{post.autor}}</p>
-        <p>{{post.fecha | date:'mediumDate' }}</p>
-        <p>{{post.categoria | titlecase}}</p>
-        <button class="btn btn-sm btn-danger" (click)="onClickBorrar(indice)">Eliminar Post</button>
+    <div class="blog-post card col-8" *ngFor="let post of arrPostsRecibidos, let indice=index;">
+
+        <img class="card-img-top" [src]="post.imagen">
+        <h5 class="text-center">{{post.categoria | titlecase}}</h5>
+        <h4 class="title text-center">{{post.titulo}}</h4>
+        <p class="text">{{post.texto}}</p>
+        <p class="text">autor: {{post.autor}}</p>
+        <p class="font-weight-bold text-muted">{{post.fecha | date:'mediumDate' }}</p>
+
+        <button class="btn btn-outline-warning w-50" (click)="onClickBorrar(indice)">Eliminar Post</button>
     </div>
 
 </div>

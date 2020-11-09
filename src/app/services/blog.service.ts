@@ -69,6 +69,22 @@ export class BlogService {
     })
   }*/
 
+  getCategoriaSinRepetir(): Promise<string[]> {
+    return new Promise((resolve, reject) => {
+      const todasCategorias = this.arrPosts.map(post => post.categoria);
+      const categoriasSinRepetir = [...new Set(todasCategorias)];
+      resolve(categoriasSinRepetir);
+    })
+  }
+
+  getAutoresSinRepetir(): Promise<string[]> {
+    return new Promise((resolve, reject) => {
+      const todosAutores = this.arrPosts.map(post => post.autor);
+      const autoresSinRepetir = [...new Set(todosAutores)];
+      resolve(autoresSinRepetir);
+    })
+  }
+
   agregarPost(pPost: Post): Promise<Post[]> {
     return new Promise((resolve, reject) => {
       this.arrPosts.push(pPost);
@@ -83,4 +99,7 @@ export class BlogService {
   }
 
 }
+
+
+
 

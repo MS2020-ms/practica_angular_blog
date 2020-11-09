@@ -1,32 +1,52 @@
 <div id="top"></div>
-<div class="blog-posts">
 
-    <select class="browser-default custom-select w-50" (change)="onChange($event)">
-        <option disabled selected>Selecciona un categoria</option>
-        <option value="todas">Todas</option>
-        <option value="estilo">Estilo</option>
-        <option value="gastro">Gastro</option>
-        <option value="viaje">Viaje</option>
-        <option value="cultura">Cultura</option>
-        <option value="ocio">Ocio</option>
-        <!-- <option [value]="categoria" *ngFor="categoria of categorias">{{ categoria | titlecase }}</option> -->
-    </select>
+<div>
 
+    <div class="blog-main">
+        <div class="blog-posts">
 
-    <div class="blog-post card col-8" *ngFor="let post of arrPostsRecibidos, let indice=index;">
+            <div class="blog-post card" *ngFor="let post of arrPostsRecibidos, let indice=index;">
+                <img class="card-img-top" [src]="post.imagen">
+                <h5 class="text-center" [ngClass]="post.categoria">{{post.categoria | titlecase}}</h5>
+                <h4 class="title text-center">{{post.titulo}}</h4>
+                <p class="text">{{post.texto}}</p>
+                <p class="text">autor: {{post.autor}}</p>
+                <p class="font-weight-bold text-muted">{{post.fecha | date:'mediumDate' }}</p>
 
-        <img class="card-img-top" [src]="post.imagen">
-        <h5 class="text-center" [ngClass]="post.categoria">{{post.categoria | titlecase}}</h5>
-        <h4 class="title text-center">{{post.titulo}}</h4>
-        <p class="text">{{post.texto}}</p>
-        <p class="text">autor: {{post.autor}}</p>
-        <p class="font-weight-bold text-muted">{{post.fecha | date:'mediumDate' }}</p>
+                <button class="btn btn-outline-warning w-50" (click)="onClickBorrar(indice)">Eliminar Post</button>
+            </div>
 
-        <button class="btn btn-outline-warning w-50" (click)="onClickBorrar(indice)">Eliminar Post</button>
+            <a href="#top" class="arrow-top d-flex flex-row-reverse">
+                <i class="fas fa-angle-double-up"></i>
+            </a>
+
+        </div>
+
+        <div class="sidebar">
+            <select class="browser-default custom-select w-70" (change)="onChange($event)">
+                <option disabled selected>Selecciona un categoria</option>
+                <option value="todas">Todas</option>
+                <option value="estilo">Estilo</option>
+                <option value="gastro">Gastro</option>
+                <option value="viaje">Viaje</option>
+                <option value="cultura">Cultura</option>
+                <option value="ocio">Ocio</option>
+                <!-- <option [value]="categoria" *ngFor="categoria of categorias">{{ categoria | titlecase }}</option> -->
+            </select>
+
+            <ul>
+                <p><b>Categorias activas:</b></p>
+                <li *ngFor="let categoria of categorias">
+                    {{categoria}} ()
+                </li>
+            </ul>
+
+            <ul>
+                <p><b>Autores del blog:</b></p>
+                <li *ngFor="let autor of autores">
+                    {{autor}}
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <a href="#top" class="arrow-top d-flex flex-row-reverse">
-        <i class="fas fa-angle-double-up"></i>
-    </a>
-
 </div>

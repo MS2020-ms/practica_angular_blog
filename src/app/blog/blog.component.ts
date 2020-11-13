@@ -11,17 +11,20 @@ export class BlogComponent implements OnInit {
 
   arrPostsRecibidos: Post[];
 
-  categorias: string[];
+  categorias: { nombre: string, num: number }[];
+
+  //categorias: string[];
 
   autores: string[];
 
-
-  constructor(private blogService: BlogService) { }
+  constructor(public blogService: BlogService) { }
 
   ngOnInit(): void {
 
-    this.blogService.getCategoriaSinRepetir()
-      .then(arrCategorias => this.categorias = arrCategorias);
+    this.categorias = this.blogService.getCategoriasSelect();
+
+    //this.blogService.getCategoriaSinRepetir()
+    //  .then(arrCategorias => this.categorias = arrCategorias);
 
     this.blogService.getAutoresSinRepetir()
       .then(arrAutores => this.autores = arrAutores);

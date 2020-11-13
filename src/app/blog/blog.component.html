@@ -26,19 +26,18 @@
             <select class="browser-default custom-select w-70" (change)="onChange($event)">
                 <option disabled selected>Selecciona un categoria</option>
                 <option value="todas">Todas</option>
-                <option value="estilo">Estilo</option>
-                <option value="gastro">Gastro</option>
-                <option value="viaje">Viaje</option>
-                <option value="cultura">Cultura</option>
-                <option value="ocio">Ocio</option>
-                <!-- <option [value]="categoria" *ngFor="categoria of categorias">{{ categoria | titlecase }}</option> -->
+                <option *ngFor="let categoria of categorias" [value]="categoria.nombre">
+                    {{ categoria.nombre | titlecase }} ({{ categoria.num }})
+                </option>
             </select>
 
             <ul>
                 <p><b>Categorias activas:</b></p>
-                <li *ngFor="let categoria of categorias">
-                    {{categoria}} ()
-                </li>
+                <li>Cultura ({{ blogService.getNumPostByCategoria('cultura') }})</li>
+                <li>Ocio ({{ blogService.getNumPostByCategoria('ocio') }})</li>
+                <li>Estilo ({{ blogService.getNumPostByCategoria('estilo') }})</li>
+                <li>Gastro ({{ blogService.getNumPostByCategoria('gastro') }})</li>
+                <li>Viaje ({{ blogService.getNumPostByCategoria('viaje') }})</li>
             </ul>
 
             <ul>

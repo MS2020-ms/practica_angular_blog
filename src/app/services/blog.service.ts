@@ -7,6 +7,7 @@ import { Post } from '../interfaces/post.interface';
 export class BlogService {
 
   private arrPosts: Post[];
+  categorias: string[];
 
   constructor() {
 
@@ -37,6 +38,8 @@ export class BlogService {
       },
     ];
 
+    this.categorias = ['cultura', 'ocio', 'estilo', 'gastro', 'viaje'];
+
     if (localStorage.getItem('nuevoPost')) {
       this.arrPosts = JSON.parse(localStorage.getItem('nuevoPost'));
     }
@@ -51,6 +54,22 @@ export class BlogService {
     });
   }
 
+  getCategoriasSelect() {
+    let elements = [];
+    for (let categoria of this.categorias) {
+      elements.push({ nombre: categoria, num: this.getNumPostByCategoria(categoria) });
+    }
+    return elements;
+  }
+
+  getNumPostByCategoria(pCategoria) {
+    let num = 0;
+    for (let post of this.arrPosts) {
+      if (post.categoria === pCategoria) num++;
+    }
+    return num;
+  }
+
   getPostsByCategoria(pCategoria): Promise<Post[]> {
     return new Promise((resolve, reject) => {
       const arrFiltrado = this.arrPosts.filter(post => {
@@ -60,22 +79,13 @@ export class BlogService {
     });
   }
 
-  /*
-  getCategoria(): Promise<string[]> {
-    return new Promise((resolve, reject) => {
-      const todasCategorias = this.arrPosts.map(post => post.categoria);
-      const postSinRepetir = [...new Set(todasCategorias)];
-      resolve(postSinRepetir);
-    })
-  }*/
-
-  getCategoriaSinRepetir(): Promise<string[]> {
+  /*getCategoriaSinRepetir(): Promise<string[]> {
     return new Promise((resolve, reject) => {
       const todasCategorias = this.arrPosts.map(post => post.categoria);
       const categoriasSinRepetir = [...new Set(todasCategorias)];
       resolve(categoriasSinRepetir);
     })
-  }
+  }*/
 
   getAutoresSinRepetir(): Promise<string[]> {
     return new Promise((resolve, reject) => {

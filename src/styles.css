@@ -6,14 +6,13 @@
 html {
     scroll-behavior: smooth;
 }
-body{
-    background-color: #ebdfd3;
-}
 .row{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-   
+}
+.col-11{
+    background-color: #ebdfd3;
 }
 .header{
     display: flex;
@@ -38,11 +37,19 @@ body{
 }
 .header img{
     width: 400px;
-    padding:  10px;
+    padding-left: 20px;
     margin-bottom: 10px;
+}
+.lema{
+    text-align: center;
+    color: gray;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.70em;
 }
 .botones{
     border-top: 1.5px solid #8a8a8a;
+    margin-left: 20px;
+    margin-right: 5px;
 }
 .botones div:last-child {
     margin-top: 20px;
@@ -63,12 +70,13 @@ body{
 }
 .blog-posts{
     width: 65%;
-    margin-top: 15px;
+    margin: 0px 20px;
 }
 .sidebar{
     width: 35%;
     margin-left: 40px;
-    margin-top: 45px;
+    margin-top: 27px;
+    margin-right: 20px;
 }
 .sidebar ul{
     margin-top: 20px;
@@ -132,7 +140,6 @@ background-color: #ebdfd3;
     justify-content: center;
     height: 80px;
     background-color: #202020;
-    margin-top: 8px;
 }
 .footer i{
     color: white;

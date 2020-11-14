@@ -10,7 +10,6 @@ import { BlogService } from '../services/blog.service';
 export class BlogComponent implements OnInit {
 
   arrPostsRecibidos: Post[];
-
   categorias: { nombre: string, num: number }[];
 
   //categorias: string[];
@@ -21,6 +20,12 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.blogService.getAllPosts()
+      .then(posts => {
+        this.arrPostsRecibidos = posts;
+      })
+      .catch(error => console.log(error));
+
     this.categorias = this.blogService.getCategoriasSelect();
 
     //this.blogService.getCategoriaSinRepetir()
@@ -28,12 +33,6 @@ export class BlogComponent implements OnInit {
 
     this.blogService.getAutoresSinRepetir()
       .then(arrAutores => this.autores = arrAutores);
-
-    this.blogService.getAllPosts()
-      .then(posts => {
-        this.arrPostsRecibidos = posts;
-      })
-      .catch(error => console.log(error));
   }
 
   async onChange($event) {

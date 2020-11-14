@@ -11,7 +11,7 @@
                 <h4 class="title text-center">{{post.titulo}}</h4>
                 <p class="text">{{post.texto}}</p>
                 <p class="text">autor: {{post.autor}}</p>
-                <p class="font-weight-bold text-muted">{{post.fecha | date:'mediumDate' }}</p>
+                <p class="text-muted"><strong>{{post.fecha | date:'mediumDate' }}</strong></p>
 
                 <button class="btn btn-outline-warning w-50" (click)="onClickBorrar(indice)">Eliminar Post</button>
             </div>
@@ -43,6 +43,7 @@
             <ul>
                 <p><b>Autores del blog:</b></p>
                 <li *ngFor="let autor of autores">
+                    <img class="img-autor" src="./assets/images/avatar_{{autor.toLowerCase()}}.jpg">
                     {{autor}}
                 </li>
             </ul>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../interfaces/post.interface';
 import { BlogService } from '../services/blog.service';
 
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -16,7 +17,12 @@ export class BlogComponent implements OnInit {
 
   autores: string[];
 
-  constructor(public blogService: BlogService) { }
+  leerMas: boolean;
+
+  constructor(public blogService: BlogService) {
+
+    this.leerMas = true;
+  }
 
   ngOnInit(): void {
 
@@ -45,6 +51,10 @@ export class BlogComponent implements OnInit {
 
   onClickBorrar(pIndice: number) {
     this.blogService.borrarPost(pIndice);
+  }
+
+  onClickLeerMas() {
+    this.leerMas = !this.leerMas;
   }
 
 }

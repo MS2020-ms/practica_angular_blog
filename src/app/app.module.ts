@@ -10,6 +10,7 @@ import { Error404Component } from './error404/error404.component';
 import { NavTabComponent } from './nav-tab/nav-tab.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { TextLongitudPipe } from './blog/text-longitud.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
     Error404Component,
     NavTabComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TextLongitudPipe
   ],
 
   //ReactiveFormsModule para formulario model

@@ -9,9 +9,11 @@
                 <img class="card-img-top" [src]="post.imagen">
                 <h5 class="text-center" [ngClass]="post.categoria">{{post.categoria | titlecase}}</h5>
                 <h4 class="title text-center">{{post.titulo}}</h4>
-                <p class="text">{{post.texto}}</p>
-                <p class="text">autor: {{post.autor}}</p>
-                <p class="text-muted"><strong>{{post.fecha | date:'mediumDate' }}</strong></p>
+                <p class="text" *ngIf="this.leerMas == true">{{post.texto | textLongitud: 150}}</p>
+                <p class="text" *ngIf="this.leerMas == false">{{post.texto}}</p>
+                <a class="enlace text-warning" (click)="onClickLeerMas()">Leer mas</a>
+                <p class="text mt-1">autor: {{post.autor}}</p>
+                <p class="text-muted mt-3"><strong>{{post.fecha | date:'mediumDate' }}</strong></p>
 
                 <button class="btn btn-outline-warning w-50" (click)="onClickBorrar(indice)">Eliminar Post</button>
             </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/post.interface';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,7 @@ export class BlogService {
     this.arrPosts = [
       {
         titulo: 'De Cafes por Berlin',
-        texto: 'Berlín tiene infinidad de cafeterías para todos los gustos. Cada una de ellas se puede decir que tiene una personalidad diferente, con una temática, decoración y ambiente muy especiales, tanto que algunas, a veces, pueden rozar lo ‘raro’.',
+        texto: 'Berlín tiene infinidad de cafeterías para todos los gustos. Cada una de ellas se puede decir que tiene una personalidad diferente, con una temática, decoración y ambiente muy especiales, tanto que algunas, a veces, pueden rozar lo ‘raro’. Freischwimmer tiene una peculiaridad especial, y es que está situada en un lago. Es una de las cafeterías con más encanto de Berlín, por las vistas que tiene. Tomarte un café ahí es una parada obligatoria si vienes a Berlín. Esta cafetería está situada en Vor dem Schlesischen Tor 2a.',
         autor: 'Hanna Müller',
         imagen: './assets/images/cafe-berlin.jpg',
         fecha: new Date(),
@@ -30,7 +31,7 @@ export class BlogService {
       },
       {
         titulo: '5 Lagos imprescindibles',
-        texto: 'Pasar el día en alguno de los numerosos lagos que hay en Berlín es la opción perfecta para los días calurosos del verano. Y es que, vaya uno en la dirección que vaya, en Berlín es fácil encontrarse con el agua. Cientos de lagos, además de ríos y canales, están presentes en Berlín y en la cercana región de Brandeburgo.',
+        texto: 'Pasar el día en alguno de los numerosos lagos que hay en Berlín es la opción perfecta para los días calurosos del verano. Y es que, vaya uno en la dirección que vaya, en Berlín es fácil encontrarse con el agua. Cientos de lagos, además de ríos y canales, están presentes en Berlín y en la cercana región de Brandeburgo. Krumme Lanke en el borde del bosque de Grunewald al sudoeste de Berlín, este lago es llamado así por su forma curva, es muy popular entre los estudiantes de la Frei Universität y las familias de clase media alta de los barrios de Dahlem y Zehlendorf. Un circuito de 2,5 Km recorre las orillas del lago y es uno de los favoritos para los practicantes de footing y hiking. El lago también tiene una zona de FKK, en una pequeña playa de arena junto al Fischerhüttenstrasse, y la entrada es gratuita.',
         autor: 'Juan Tormento',
         imagen: './assets/images/lago-berlin.jpg',
         fecha: new Date(),

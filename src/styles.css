@@ -117,7 +117,7 @@ html {
     background-color: #d2dae2;
 }
 .blog-post{
-background-color: #ebdfd3;
+    background-color: #ebdfd3;
     border-style: none;
     margin-top: 30px;
     border-bottom: 1px solid #8a8a8a;
@@ -139,6 +139,20 @@ background-color: #ebdfd3;
     font-size: 1.75em;
     margin-top: 10px;
 }
+.blog-post a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.blog-post p{
+    margin-bottom: 0em;
+}
+/*Para truncar texto de UNA linea con puntos suspensivos
+    .blog-post p{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word; 
+} */
 .footer{
     display: flex;
     justify-content: center;
